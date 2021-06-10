@@ -1,0 +1,79 @@
+import java.util.Scanner;
+ 
+public class java {
+    public float luasBola(float r) {
+        float phi = 3.14f;
+        float hasil;
+        hasil = 4 * phi * r * r;
+        return hasil;
+    }
+
+    public float volumeBola(float r) {
+        float phi = 3.14f;
+        float hasil;
+        hasil = 4 / (float) 3 * phi * r * r * r;
+        return hasil;
+    }
+
+    public float luasKubus(float r) {
+        float hasil;
+        hasil = 6 * r * r;
+        return hasil;
+    }
+
+    public float volumeKubus(float r) {
+        float hasil;
+        hasil = r * r * r;
+        return hasil;
+    }
+
+    public float luasKerucut(float r) {
+        float phi = 3.14f;
+        float hasil;
+        hasil = phi * r * r + phi * r * 25;
+        return hasil;
+    }
+
+    public float volumeKerucut(float r) {
+        float phi = 3.14f;
+        float hasil;
+        hasil = 1/(float) 3 * phi * r * r * 20;
+        return hasil;
+    }
+
+    public static void main(String[] args) {
+        
+        char choice;
+        do{
+            Scanner userInput = new Scanner(System.in);
+            float rusuk, luasB, volumeB, luasK, volumeK, luasKr, volumeKr;
+            java Rusuk = new java();
+            System.out.println("\t Luas Permukaan & Volume Bola \n");
+            System.out.print(" Masukkan Rusuk : ");
+            rusuk = userInput.nextFloat();
+            luasB = Rusuk.luasBola(rusuk);
+            System.out.println("\n Luas Permukaannya : " + luasB);
+            volumeB = Rusuk.volumeBola(rusuk);
+            System.out.println("\n Volume Bolanya    : " + volumeB);
+
+            System.out.println("\t Luas Permukaan & Volume Kubus \n");
+            System.out.print(" Masukkan Rusuk : ");
+            rusuk = userInput.nextFloat();
+            luasK = Rusuk.luasKubus(rusuk);
+            System.out.println("\n Luas Permukaannya : " + luasK);
+            volumeK = Rusuk.volumeKubus(rusuk);
+            System.out.println("\n Volume Bolanya    : " + volumeK);
+
+            System.out.println("\t Luas Permukaan & Volume Kerucut \n");
+            System.out.print(" Masukkan Rusuk : ");
+            rusuk = userInput.nextFloat();
+            luasKr = Rusuk.luasKerucut(rusuk);
+            System.out.println("\n Luas Permukaannya : " + luasKr);
+            volumeKr = Rusuk.volumeKerucut(rusuk);
+            System.out.println("\n Volume Bolanya    : " + volumeKr);
+
+            System.out.print("Apakah mau melanjutkan perhitungan? (Y/N)? ");
+            choice = userInput.next().charAt(0);
+        }while(choice == 'Y' || choice == 'y');
+    }       
+}
